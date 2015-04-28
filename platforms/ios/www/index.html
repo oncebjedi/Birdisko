@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        <!-- viewport scale to 0.5  -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- index css -->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!-- fontastic css -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        
+        <!-- include cordova js -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- include jquery -->
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <!-- include index js -->
+        <script type="text/javascript" src="js/index.js"></script>
+       
+
+        <title>Birdisko</title>
+    </head>
+    
+    <body>
+		<div class="app">
+			 <!-- Navigationo bar -->
+		    <div class="nav">
+			    <div id="title-learn" class="title title-current">Learn</div>
+			    <div id="title-search" class="title">Search</div>
+		    	<div id="title-map" class="title">Map</div>
+			</div>
+		    
+		    <!-- Learn page -->
+		    <div id="page-learn" class="page page-current">		                
+			    
+				<!-- Page section -->
+				<section id="lessons-list">
+				    <ul class="learn-list">
+					    <li>
+						    <div>
+						        <img width="226px" height="226px" src="img/Wetland.png">
+							    <p>Wetland</p>
+					        </div>
+					    </li>
+					    
+					    <li>
+						    <div>
+						        <img width="226px" height="226px" src="img/Mountain.png">
+							    <p>Mountain</p>
+					        </div>
+					    </li>
+				    </ul>
+				    
+				    <ul class="learn-list">
+					    <li>
+						    <div>
+						        <img width="226px" height="226px" src="img/Forest.png">
+							    <p>Forest</p>
+					        </div>
+					    </li>
+					    
+					    <li>
+						    <div id="link_silhouette">
+							    <div class="circle circle_silhouette_list"></div>
+							    <img id="img_silhouette" class="img_silhouette silouette_transition" width="226px" height="226px" src="img/Silhouette.png">
+							    <p>Silhouette</p>
+					        </div>
+					    </li>
+				    </ul>
+				    
+				    <ul class="learn-list">
+					    <li>
+						    <div>
+						        <img width="226px" height="226px" src="img/Song.png">
+							    <p>Song</p>
+					        </div>
+					    </li>
+					    
+					    <li>
+						    <div>
+						        <img width="226px" height="226px" src="img/Color.png">
+							    <p>Color</p>
+					        </div> 
+					    </li>
+				    </ul>
+
+				</section>    
+			<!-- Lessons div	     -->
+		    </div>
+		    
+		    <!-- Search page -->
+		    <div id="page-search" class="page">
+		    </div>
+		
+		    <!-- Map page -->
+		    <div id="page-map" class="page">
+			    <div id="map_canvas"></div>
+		    </div>
+		    
+		    <!-- Tab bar -->
+		    <div class="tabbar">
+			    <ul>
+				    <li>
+					    <div id = "tab-icon-learn" class= "tab-icon tab-icon-current">
+						    <div class= "icon-learn"></div>
+							<span>Learn</span>
+					    </div>
+				    </li>
+				    <li>
+					    <div id = "tab-icon-search" class= "tab-icon">
+						    <div class= "icon-search"></div>
+							<span>Search</span>
+					    </div>
+				    </li>
+				    <li>
+					    <div id = "tab-icon-map" class= "tab-icon">
+						    <div class= "icon-map"></div>
+							<span>Map</span>
+					    </div>
+				    </li>
+				</ul>	    
+			</div>
+		<!-- App div -->	
+		</div>
+	<div id="page-silhouette-lesson" class="app inactive-lesson-page">
+		<button>
+		<div class="icon-back nav_transition"></div>
+		</button>
+		<div class="lesson_title nav_transition">Silhouette</div>
+		<!-- Silhouette lessons animation circle -->
+		<div id="circle_silhouette" class="circle circle_silhouette circle_transition"></div>
+		<!-- Silhouette lessons 1 -->
+		<div class="lessons silhouette_lessons lessons_hidden lessons_transition lessons_current lessons_first">
+			<div class="lessons_content">
+					<h1>Lessons</h1>
+					<h2>1 of 8</h2>
+					<h3>Wing shape</h3>
+					<h4>broad wings,</h4>
+					<h4>long wings</h4>
+					<button class="start_lesson lesson_enabled">Start</button>
+			</div>
+		</div>
+		<!-- Silhouette lessons 2 -->
+		<div class="lessons silhouette_lessons lessons_hidden lessons_transition">
+			<div class="lessons_content">
+					<h1>Lessons</h1>
+					<h2>2 of 8</h2>
+					<h3>Wing shape</h3>
+					<h4>broad wings,</h4>
+					<h4>long wings</h4>
+					<button class="start_lesson lesson_disabled">Locked</button>
+			</div>
+		</div>
+		<!-- Silhouette lessons 3 -->
+		<div class="lessons silhouette_lessons lessons_hidden lessons_transition lessons_last">
+			<div class="lessons_content">
+					<h1>Lessons</h1>
+					<h2>3 of 8</h2>
+					<h3>Wing shape</h3>
+					<h4>broad wings,</h4>
+					<h4>long wings</h4>
+					<button class="start_lesson lesson_disabled">Locked</button>
+			</div>
+		</div>
+		<!-- Lesssons active div page -->
+	</div>
+    </body>
+</html>

@@ -1,0 +1,408 @@
+* {
+	/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+body {
+	 /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-text-size-adjust: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */             
+    -webkit-user-select: none;                  
+    
+    /* background: */
+    
+    font-family:'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    border:0px;
+    padding:0px;
+    box-sizing: border-box;
+    height:100%;
+    width:100%;
+    
+    overflow:hidden;
+}
+
+.ui-loader{
+	display:none;
+}
+
+/*Override webkit default set*/
+ul, p{
+	-webkit-padding-start: 0px;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+}
+/* overflow not working */
+.app{
+	height:1334px;
+	width:750px;
+}
+/* Narvigation bar: */
+.nav{
+	background: rgba(255,255,255,0.80);
+	box-shadow: 0px 1px 0px 0px #B2B2B2;
+	width: 100%;
+	height: 128px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+.title{
+	font-family: HelveticaNeue-Medium;
+	font-size: 34px;
+	color: #030303;
+	position: relative;
+	top: 62px;
+	display: none;
+}
+
+.title-current {
+	display: block;
+}
+
+#page-learn{
+	background: #F0F0F0;
+}
+/* Main page */
+.page {
+	position:absolute;
+	height:1108px;
+	width:100%;
+	top:128px;
+	left:0px;
+	display: none;
+}
+
+.page-current {
+	display: block;
+}
+
+/* Lessons list */
+li {
+	display: inline-block;
+	box-sizing: border-box;
+	
+	font-family: 'HelveticaNeue';
+	text-align: center;
+}
+
+#lessons-list {
+	position: absolute;
+	padding-top: 50px;
+	padding-left: 95px;
+	box-sizing: border-box;
+}
+
+.learn-list {
+	margin-bottom: 80px;
+}
+
+.learn-list li {
+	width: 230px;
+}
+
+.learn-list li:nth-child(1){
+	margin-right: 102px;
+}
+
+.learn-list li p{
+	font-size: 32px;
+	line-height: 38px;
+	width: 226px;
+	height: 38px;
+	margin-top: 16px;
+}
+
+/* Map content*/
+#map_canvas {
+/* 	element not respond to meta viewport 0.5
+	set the default width and height to fix*/
+	width:375px;
+	height:554px;
+	position:absolute;
+	top:-64px;
+}
+
+/* Tab bar*/
+.tabbar{
+	background: rgba(255,255,255,0.80);
+	box-shadow: inset 0px 1px 0px 0px rgba(178,178,178,0.50);
+	width: 100%;
+	height: 98px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+.tabbar ul {
+	padding-left: 59px;
+	margin-top: 4px;
+}
+
+.tabbar ul li {
+	width: 98px;
+	height: 98px;
+	margin-left: 169px;
+	font-size: 20px;
+	letter-spacing: 0.4px;
+	line-height: 24px;
+
+}
+
+.tabbar ul li:nth-child(1){
+	margin-left: 0px;
+}
+
+.tab-icon {
+	color: #929292;
+}
+
+.tab-icon-current {
+	color: #3DAEBA;
+}
+
+.tabbar ul li div span{
+	height: 24px;
+	width: 98px;
+	position: relative;
+	top: -8px;
+	padding: none;
+	margin: none;
+	
+}
+
+/* Set individual tap icon size */
+.icon-learn{
+	font-size: 70px;
+}
+
+.icon-search{
+	font-size: 70px;
+}
+
+.icon-map{
+	font-size: 72px;
+	position: relative;
+	top: -2px;
+}
+
+/* Silhouette lessons page setup */
+.inactive-lesson-page {
+	display:none;
+}
+
+.active-lesson-page {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+/* Onclick silhouette lessons animation */
+.circle{
+	width:226px;
+	height:226px;
+	border-radius: 50%;
+	background-color:#93C8CB;
+    position:absolute;
+    left:430px;
+
+}
+/* Circle on lesson list */
+.circle_silhouette_list {
+	top:414px;
+}
+/* Circle to animate */
+.circle_silhouette{
+	top:542px;
+}
+
+.circle_active {
+	position:absolute;
+	box-sizing: border-box;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	
+	border-radius: 0%;
+	background-color:#93C8CB;
+    z-index:1;
+}
+
+.circle_transition {
+	-webkit-transition: .7s ease all;
+	transition: .7s ease all;	
+}
+
+/* Silhouette img animation */
+.img_silhouette{
+	position:relative;
+	transform-origin:center;
+	z-index:2;	
+}
+
+.img_silhouette_active{
+	position:relative;
+	top:-352px;
+	left:-168px;
+	z-index:2;
+}
+
+.silouette_transition {
+	-webkit-transition:  .7s ease all;
+	transition:  .7s ease all;
+}
+
+/* Lessons page */
+.lessons{
+	position:absolute;
+	top:2000px;
+	width:414px;
+	height:504px;
+	box-sizing: border-box;
+	
+	background: #FCFCFC;
+	border: 1px solid rgba(11,50,73,0.20);
+	box-shadow: 2px 2px 6px 0px rgba(11,51,72,0.40);
+	
+	padding-top:60px;
+	padding-left:72px;
+	padding-bottom:56px;
+	padding-right:72px;
+	border-radius:15px;
+	
+	text-align:center;
+	font-family: Futura, 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	
+	z-index:2;
+	
+	/* scale center */
+	transform-origin:center;
+}
+/* lessons animation */
+
+.lessons_hidden {
+	display: none;
+}
+.lessons_active {
+	top:618px;
+	display:block;
+}
+
+.lessons_current{
+	-webkit-transform: scale(1.2);
+}
+
+.lessons_transition {
+	-webkit-transition: scale .4s linear;
+}
+
+
+/* lessons sliding */
+.lessons_content h1 {
+	font-size: 32px;
+	color: #0C3349;
+	text-transform:uppercase;
+	margin:0px;
+	font-weight: normal;
+}
+
+.lessons_content h2 {
+	font-size: 24px;
+	color: #93C8CB;
+	margin-top:6px;
+	margin-bottom:0px;
+	font-weight: normal;
+}
+
+.lessons_content h3 {
+	font-family: HelveticaNeue;
+	font-size: 28px;
+	color: #0C3349;
+	font-weight: normal;
+	margin-top:50px;
+	margin-bottom:10px;
+}
+
+.lessons_content h4 {
+	font-family: HelveticaNeue-Light;
+	font-size: 28px;
+	color: #0C3349;
+	font-weight:normal;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-transform: lowercase;
+}
+
+/* start lesson button */
+.start_lesson {
+	background: #93C8CB;
+	width:270px;
+	height:100px;
+	border-radius: 50px;
+	margin-top:60px;
+	border:none;
+	
+	font-family: Futura-Medium;
+	font-size: 32px;
+	color: #FFFFFF;
+	letter-spacing: 0.03px;
+	text-transform: uppercase;
+}
+
+.start_lesson{
+	width:270px;
+	height:100px;
+	border-radius: 50px;
+	margin-top:60px;
+	border:none;
+	
+	font-family: Futura-Medium;
+	font-size: 36px;
+	color: #FFFFFF;
+	letter-spacing: 0.03px;
+	text-transform: uppercase;
+}
+
+.lesson_enabled {
+	background: #93C8CB;
+}
+.lesson_disabled {
+	background: #c4c4c4;
+}
+
+/* navigation tab animation */
+.icon-back {
+	position: absolute;
+	top:-50px;
+	left:40px;
+	font-size: 40px;
+	color:#FFFFFF;
+	z-index:3;
+}
+
+.icon-back_active {
+	top:80px;
+}
+
+.lesson_title{
+	position:absolute;
+	top:-50px;
+	left:284px;
+	font-family: HelveticaNeue-Bold;
+	font-size: 36px;
+	color: #FFFFFF;
+	z-index:2;
+}
+
+.lesson_title_active{
+	top:76px;
+}
+
+.nav_transition{
+	transition:.7s ease all;
+}
